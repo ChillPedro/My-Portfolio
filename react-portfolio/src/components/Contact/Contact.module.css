@@ -1,0 +1,86 @@
+@import "../../vars.css";
+
+.container {
+  color: var(--color-text);
+  margin-top: 120px;
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+  padding: 58px 10%;
+  gap: 10px;
+}
+
+.text h2 {
+  font-size: 4rem; /* Adjusted for better mobile readability */
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.text p {
+  font-size: 2rem; /* Adjusted for better mobile readability */
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  gap: 20px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.link a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1.5rem; /* Adjusted for better mobile readability */
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+.link img {
+  width: 40px; /* Adjusted for mobile */
+  height: 40px; /* Adjusted for mobile */
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    flex-direction: column;
+    padding: 40px 5%; /* Reduced padding for mobile */
+    gap: 20px;
+  }
+
+  .text {
+    align-items: center;
+    text-align: center; /* Center text on mobile */
+  }
+
+  .links {
+    align-items: center;
+  }
+
+  .link img {
+    width: 30px; /* Further adjust image size for smaller screens */
+    height: 30px;
+  }
+
+  .text h2 {
+    font-size: 3rem; /* Smaller heading on mobile */
+  }
+
+  .text p {
+    font-size: 1.5rem; /* Smaller paragraph on mobile */
+  }
+
+  .link a {
+    font-size: 1.2rem; /* Smaller link text on mobile */
+  }
+}

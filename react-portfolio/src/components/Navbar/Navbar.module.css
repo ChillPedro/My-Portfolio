@@ -1,0 +1,107 @@
+@import "../../vars.css";
+
+.navbar {
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  z-index: 2;
+  background-color: var(--background-color); /* Ensure visibility */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.menuBtn {
+  display: none;
+}
+
+.menu {
+  display: flex;
+}
+
+.menuItems {
+  display: flex;
+  gap: 47px;
+  list-style: none;
+}
+
+.menuItems a {
+  font-size: 25px;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.menuItems a:hover {
+  color: var(--color-highlight); /* Change to a highlight color on hover */
+}
+
+@media screen and (max-width: 830px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px; /* Adjust padding for mobile */
+  }
+
+  .menu {
+    position: absolute;
+    right: 0;
+    margin-right: 5%; /* Reduce margin for better fit */
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px; /* Smaller gap for mobile */
+    z-index: 3;
+  }
+
+  .menuBtn {
+    display: block;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px; /* Margin below button */
+    background: transparent; /* Make it transparent */
+    border: none; /* Remove border */
+  }
+
+  .menuItems {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    border-radius: 10px;
+    background: rgba(25, 55, 109, 0.9); /* Slightly darker for contrast */
+    padding: 20px 25px; /* Adjust padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); /* More pronounced shadow */
+    transition: all 0.3s ease; /* Smooth transition for showing/hiding */
+  }
+
+  .menuOpen {
+    display: flex;
+    animation: slideIn 0.3s forwards; /* Optional animation for opening */
+    z-index: 1;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Accessibility styles */
+.menuItems a:focus {
+  outline: 2px solid var(--color-highlight); /* Outline for focus states */
+}
